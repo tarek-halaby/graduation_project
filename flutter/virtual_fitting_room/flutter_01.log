@@ -1,0 +1,100 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter --no-color attach --machine --device-id=emulator-5554 lib\main.dart
+
+## exception
+
+StateError: Bad state: Future already completed
+
+```
+#0      _AsyncCompleter.complete (dart:async/future_impl.dart:43:31)
+#1      DartDevelopmentService.startDartDevelopmentService (package:flutter_tools/src/base/dds.dart:56:18)
+<asynchronous suspension>
+#2      FlutterDevice.connect.<anonymous closure> (package:flutter_tools/src/resident_runner.dart:237:28)
+#3      _rootRunUnary (dart:async/zone.dart:1198:47)
+#4      _CustomZone.runUnary (dart:async/zone.dart:1100:19)
+#5      _CustomZone.runUnaryGuarded (dart:async/zone.dart:1005:7)
+#6      _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:357:11)
+#7      _BufferingStreamSubscription._add (dart:async/stream_impl.dart:285:7)
+#8      _SyncBroadcastStreamController._sendData (dart:async/broadcast_stream_controller.dart:385:25)
+#9      _BroadcastStreamController.add (dart:async/broadcast_stream_controller.dart:250:5)
+#10     Stream.asyncMap.<anonymous closure>.add (dart:async/stream.dart:582:20)
+#11     _rootRunUnary (dart:async/zone.dart:1198:47)
+#12     _CustomZone.runUnary (dart:async/zone.dart:1100:19)
+#13     _FutureListener.handleValue (dart:async/future_impl.dart:143:18)
+#14     Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:696:45)
+#15     Future._propagateToListeners (dart:async/future_impl.dart:725:32)
+#16     Future._completeWithValue (dart:async/future_impl.dart:529:5)
+#17     _AsyncAwaitCompleter.complete (dart:async-patch/async_patch.dart:40:15)
+#18     _completeOnAsyncReturn (dart:async-patch/async_patch.dart:311:13)
+#19     ProtocolDiscovery._forwardPort (package:flutter_tools/src/protocol_discovery.dart)
+<asynchronous suspension>
+#20     Stream.asyncMap.<anonymous closure>.<anonymous closure> (dart:async/stream.dart:590:29)
+#21     _rootRunUnary (dart:async/zone.dart:1198:47)
+#22     _CustomZone.runUnary (dart:async/zone.dart:1100:19)
+#23     _CustomZone.runUnaryGuarded (dart:async/zone.dart:1005:7)
+#24     _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:357:11)
+#25     _BufferingStreamSubscription._add (dart:async/stream_impl.dart:285:7)
+#26     _SinkTransformerStreamSubscription._add (dart:async/stream_transformers.dart:69:11)
+#27     _EventSinkWrapper.add (dart:async/stream_transformers.dart:15:11)
+#28     _throttle.<anonymous closure>.<anonymous closure> (package:flutter_tools/src/protocol_discovery.dart:264:18)
+#29     _rootRun (dart:async/zone.dart:1182:47)
+#30     _CustomZone.run (dart:async/zone.dart:1093:19)
+#31     _FutureListener.handleWhenComplete (dart:async/future_impl.dart:167:18)
+#32     Future._propagateToListeners.handleWhenCompleteCallback (dart:async/future_impl.dart:666:39)
+#33     Future._propagateToListeners (dart:async/future_impl.dart:722:37)
+#34     Future._complete (dart:async/future_impl.dart:519:7)
+#35     new Future.delayed.<anonymous closure> (dart:async/future.dart:323:16)
+#36     _rootRun (dart:async/zone.dart:1182:47)
+#37     _CustomZone.run (dart:async/zone.dart:1093:19)
+#38     _CustomZone.runGuarded (dart:async/zone.dart:997:7)
+#39     _CustomZone.bindCallbackGuarded.<anonymous closure> (dart:async/zone.dart:1037:23)
+#40     _rootRun (dart:async/zone.dart:1190:13)
+#41     _CustomZone.run (dart:async/zone.dart:1093:19)
+#42     _CustomZone.bindCallback.<anonymous closure> (dart:async/zone.dart:1021:23)
+#43     Timer._createTimer.<anonymous closure> (dart:async-patch/timer_patch.dart:18:15)
+#44     _Timer._runTimers (dart:isolate-patch/timer_impl.dart:397:19)
+#45     _Timer._handleMessage (dart:isolate-patch/timer_impl.dart:428:5)
+#46     _RawReceivePortImpl._handleMessage (dart:isolate-patch/isolate_patch.dart:168:12)
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel beta, 1.23.0-18.1.pre, on Microsoft Windows [Version 10.0.19041.572], locale en-US)
+    • Flutter version 1.23.0-18.1.pre at C:\flutter_windows_1.22.1-stable\flutter\flutter
+    • Framework revision 198df796aa (4 weeks ago), 2020-10-15 12:04:33 -0700
+    • Engine revision 1d12d82d9c
+    • Dart version 2.11.0 (build 2.11.0-213.1.beta)
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.2)
+    • Android SDK at C:\Users\Tarek-PC\AppData\Local\Android\sdk
+    • Platform android-30, build-tools 30.0.2
+    • Java binary at: C:\Program Files\Android\Android Studio\jre\bin\java
+    • Java version OpenJDK Runtime Environment (build 1.8.0_242-release-1644-b01)
+    • All Android licenses accepted.
+
+[✓] Chrome - develop for the web
+    • Chrome at C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+
+[✓] Android Studio (version 4.0)
+    • Android Studio at C:\Program Files\Android\Android Studio
+    • Flutter plugin version 50.0.1
+    • Dart plugin version 193.7547
+    • Java version OpenJDK Runtime Environment (build 1.8.0_242-release-1644-b01)
+
+[✓] IntelliJ IDEA Ultimate Edition (version 2020.1)
+    • IntelliJ at C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1
+    • Flutter plugin version 50.0.2
+    • Dart plugin version 201.7223.99
+
+[✓] Connected device (3 available)
+    • sdk gphone x86 (mobile) • emulator-5554 • android-x86    • Android 11 (API 30) (emulator)
+    • Web Server (web)        • web-server    • web-javascript • Flutter Tools
+    • Chrome (web)            • chrome        • web-javascript • Google Chrome 86.0.4240.183
+
+• No issues found!
+```
